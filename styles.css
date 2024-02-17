@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+
+* {
+  font-family: "Protest Riot", sans-serif;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.wrapper {
+  /* height: 100vh; */
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  background-color: rgb(255, 245, 207);
+}
+
+h1 {
+  margin: 20px;
+}
+
+.form {
+  margin: 30px;
+}
+
+.form input {
+  margin-right: 20px;
+  user-select: auto;
+}
+
+.form label {
+  margin-right: 5px;
+}
+
+.form button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.book_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+.book {
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  height: auto;
+  width: auto;
+  padding: 20px;
+}
+
+.book p {
+  text-wrap: wrap;
+  margin: 5px;
+}
+
+.book .top {
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+.book .middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book .bottom {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 5px;
+}
