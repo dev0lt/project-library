@@ -10,17 +10,7 @@ const myLibrary = [];
 let cardIndex = 0;
 let deleteIndex = 0;
 
-// Book constructor
-
-// function Book(title, author, pages, read) {
-//   this.title = title;
-//   this.author = author;
-//   this.pages = pages;
-//   this.read = read;
-//   this.info = function () {
-//     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-//   };
-// }
+// Book class
 
 class Book {
   constructor(title, author, pages, read) {
@@ -78,7 +68,7 @@ function displayAllBooks() {
   bookContainer.innerHTML = ``;
   cardIndex = 0;
   deleteIndex = 0;
-  myLibrary.forEach((book) => {
+  myLibrary.forEach(() => {
     addBook();
   });
 }
@@ -102,12 +92,15 @@ function addBook() {
 
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox";
-  checkbox.id = "read2";
+  myLibrary[cardIndex].read === "read"
+    ? (checkbox.checked = true)
+    : (checkbox.checked = false);
+  checkbox.id = "read_status";
   readBox.appendChild(checkbox);
 
   let label = document.createElement("label");
   label.innerHTML = "read?";
-  label.htmlFor = "read2";
+  label.htmlFor = "read_status";
   label.style.setProperty("display", "inline-block");
   readBox.insertBefore(label, checkbox);
 
@@ -131,3 +124,21 @@ bookContainer.addEventListener("click", function (e) {
     displayAllBooks();
   }
 });
+
+// bookContainer.addEventListener("click", function (e) {
+//   const target = e.target.closest("#read_status");
+
+//   if (target === null) return;
+
+//   const targetIndex = target.parentNode.parentNode.dataset.index;
+//   console.log(target.checked);
+//   if (target.id === "read_status") {
+//     if ((myLibrary[targetIndex].read = "not read")) {
+//       myLibrary[targetIndex].read = "read";
+//       target.checked = true;
+//     } else {
+//       myLibrary[targetIndex].read = "not read";
+//       target.checked = false;
+//     }
+//   }
+// });
